@@ -25,9 +25,6 @@ struct treeNode{
 	treeNode *right;
 };
 
-// struct listNode{
-//
-// }
 
 class List{
     private:
@@ -46,9 +43,7 @@ private:
 public:
     post(){
         Post_number=id++;
-        // int index=5;
         int index = rand() % 5;
-        // cout<<index<<endl<<index<<endl;
         creator=names[index];
 
         index = rand() % 5;
@@ -92,7 +87,6 @@ private:
     tm creationDate;
     post** posts;
     int n=rand() % 10 +1;
-    // unsigned int postsCount;
 public:
 
     //default constructor
@@ -134,9 +128,6 @@ public:
         cout<<"Thread with subject: " <<subject<< " has just been created!" <<endl;
     }
 
-    // int getPostsCount(){
-    //     return n;
-    // }
     post** getPosts(){
             return posts;
     }
@@ -190,13 +181,10 @@ class forum{
 private:
     string title;
     thread** threads;
-    // unsigned int threadsCount;
     int n=rand() %10 +1;
 public:
     //default constructor
     forum(){
-        // n=(rand() % 20);
-        // n=5;
         threads=new thread*[n];
         for (int i = 0; i < n; i++) {
             threads[i] = new thread;
@@ -206,8 +194,6 @@ public:
 
     //constructor with specific title
     forum(string titleIn){
-        // n=(rand() % 20);
-        // n=5;
         title=titleIn;
 
         threads=new thread*[n];
@@ -282,21 +268,6 @@ class btree{
         btree(thread &threadIn){
             post** posts=threadIn.getPosts();
             int n=threadIn.getN;
-            // root->creator=threadIn.posts[0]->getCreator;
-            // treeNode* tempRoot=root;
-            // for (int i=1; i<n ; i++){
-            //     while (tempRoot!=NULL){
-            //         if (threadIn.posts[i]->getCreator > tempRoot->creator){
-            //             tempRoot=tempRoot->right;
-            //         }
-            //         else if (threadIn.posts[i]->getCreator < tempRoot->creator){
-            //             tempRoot=tempRoot->left;
-            //         }
-            //         else {
-            //             myList.add(threadIn.posts[i]->getText);
-            //         }
-            // }
-
         }
 
 
@@ -308,13 +279,6 @@ class btree{
 int main(){
 
     srand (time(0));
-    // post postia;
-    //
-    // cout<<ltm->tm_mday<<"/"<<1+ltm->tm_mon<<"/"<<1900+ltm->tm_year<<endl;
-    // post* postia=new post();
-    // post postia;
-    // cout<<postia->day<<""<<postia->month<<"/"<<postia->year<<" "<<postia->creator<<endl;
-    // thread thread1;
     forum forum1("OOP");
     forum1.printForum();
     if (forum1.printThread("Rules and useful info")==0){
@@ -322,6 +286,5 @@ int main(){
     }
     forum1.printRandomPosts();
     forum1.findPostById(0);
-    // delete thread1;
     return 0;
 }
